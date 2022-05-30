@@ -37,3 +37,13 @@
 
 - ## Coding pattern
   - MVC(Model-View-Controller)
+
+
+
+```mermaid
+graph LR
+A[MVC] --> B((Model))
+A --> C((Controller))
+B --> D((Controller))
+C --> D(View)
+```
