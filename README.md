@@ -42,7 +42,7 @@
 
 ```mermaid
 graph LR
-A[MVC] --> B((Model))
+A[main] --> B((Model))
 A --> C((Controller))
 B --> D((Controller))
 C --> D(View)
