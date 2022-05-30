@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    postgres:
+        image: postgres:12
+        restart: on-failure:5
+        ports:
+            - 5432:5432
+        volumes:
+            - ./db_data:/var/lib/postgresql/data
+            - ./config/init.sql:/docker-entrypoint-initdb.d/10-init.sql
+        env_file:
+            - config/.env

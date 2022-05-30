@@ -13,7 +13,7 @@
 - Student remove
 - Generate attendance report
 - Download report in excel format
-- ***More features may be added during the development.***
+- **_More features may be added during the development._**
 
 # Technology
 
@@ -38,8 +38,6 @@
 
 - ## Coding pattern
   - MVC(Model-View-Controller)
-
-
 
 ```mermaid
 graph LR
