@@ -13,6 +13,7 @@
 - Student remove
 - Generate attendance report
 - Download report in excel format
+- ***More features may be added during the development.***
 
 # Technology
 
