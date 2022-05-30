@@ -1,6 +1,6 @@
-# student attendance_management web application
+# Student attendance management web application
 
-## Features
+## Project Features
 
 - Supper Admin
   - Controls everything
@@ -16,19 +16,24 @@
 
 # Technology
 
-- Frontend
+- ## Frontend
 
   - HTML
   - CSS
   - JAVASCRIPT
   - BOOTSTRAP (If needed)
 
-- Backend
+- ## Backend
   - GOLANG
     - gorilla/mux (for router)
     - gorilla/session (for login authentication)
-- Database
+- ## Database
+
   - POSTGRESQL
 
-- ORM
-    - gorm (http://gorm.io)
+- ## ORM
+
+  - gorm (http://gorm.io)
+
+- ## Coding pattern
+  - MVC(Model-View-Controller)
