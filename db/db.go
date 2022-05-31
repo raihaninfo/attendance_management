@@ -3,15 +3,10 @@ package db
 import (
 	"log"
 
+	"github.com/raihaninfo/attendance_magagment/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
-
-type Test struct {
-	gorm.Model
-	Name  string
-	Email string
-}
 
 func Init() *gorm.DB {
 	dbURL := "postgres://dev:secret@localhost/dev"
@@ -21,8 +16,7 @@ func Init() *gorm.DB {
 	if err != nil {
 		log.Fatalln(err)
 	}
-
-	db.AutoMigrate(&Test{})
+	db.AutoMigrate(&models.User{}, &models.Class{}, &models.Student{})
 
 	return db
 }
