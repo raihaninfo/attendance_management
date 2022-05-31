@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/raihaninfo/attendance_magagment/db"
+	"github.com/raihaninfo/attendance_magagment/controllers"
 )
 
+var Port string = ":8082"
+
 func main() {
-	db.Init()
-	fmt.Println("Hello Bangladesh!")
+	controllers.Controller(Port)
 }
