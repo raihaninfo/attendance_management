@@ -14,5 +14,6 @@ func Controller(Port string, DB *gorm.DB) {
 	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("views/frontend/assets"))))
 
 	r.HandleFunc("/", h.Home)
+	r.HandleFunc("/teacher", h.Teachers)
 	http.ListenAndServe(Port, r)
 }
