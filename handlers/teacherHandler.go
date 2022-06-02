@@ -1,17 +1,15 @@
 package handlers
 
 import (
-	"log"
 	"net/http"
 
-	"github.com/raihaninfo/attendance_magagment/views"
+	"github.com/gin-gonic/gin"
+	"github.com/raihaninfo/attendance_magagment/models"
 )
 
-var TeacherView *views.View = views.NewView("views/frontend/teachers.gohtml")
+func (h handler) Teachers(c *gin.Context) {
+	var re []models.Class
 
-func (h handler) Teachers(w http.ResponseWriter, r *http.Request) {
-	err := TeacherView.Template.Execute(w, nil)
-	if err != nil {
-		log.Println(err)
-	}
+	h.DB.Find(&re)
+	c.IndentedJSON(http.StatusOK, re)
 }
