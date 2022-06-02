@@ -5,8 +5,11 @@ import (
 )
 
 func (h handler) Home(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"message": "pong",
+	c.IndentedJSON(200, gin.H{
+		"App":     "Attendance Management system",
+		"Version": "1.0",
+		"Author":  "Md Abu Raihan",
+		"Url":     "https://github.com/raihaninfo",
 	})
 
 }

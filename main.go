@@ -5,6 +5,7 @@ import (
 
 	"github.com/raihaninfo/attendance_magagment/controllers"
 	"github.com/raihaninfo/attendance_magagment/db"
+	_ "github.com/raihaninfo/attendance_magagment/docs"
 )
 
 var Port string = ":8082"
