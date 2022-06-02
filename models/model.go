@@ -24,7 +24,7 @@ type Student struct {
 }
 
 type Class struct {
-	Id           int `gorm:"primaryKey"`
-	ClassName    string
-	ClassTeacher int
+	Id           int    `gorm:"primaryKey"`
+	ClassName    string `json:"class"`
+	ClassTeacher int    `json:"class-teacher"`
 }

@@ -7,9 +7,8 @@ import (
 	"github.com/raihaninfo/attendance_magagment/models"
 )
 
-func (h handler) Teachers(c *gin.Context) {
+func (h handler) Teacher(c *gin.Context) {
 	var re []models.Class
-
 	h.DB.Find(&re)
 	c.IndentedJSON(http.StatusOK, re)
 }
