@@ -4,10 +4,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/raihaninfo/attendance_magagment/handlers"
 
-	// swaggerFiles "github.com/swaggo/files"
-	// ginSwagger "github.com/swaggo/gin-swagger"
-
-	//swaggerFiles "github.com/swaggo/files"     // swagger embed files
 	ginSwagger "github.com/swaggo/gin-swagger" // gin-swagger middleware
 
 	swaggerFiles "github.com/swaggo/gin-swagger/swaggerFiles"
