@@ -33,7 +33,7 @@
 
   - POSTGRESQL
 
-## Documentation
+## Api Documentation
 
 - go-swagger (https://github.com/go-swagger/go-swagger)
 
