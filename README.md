@@ -26,11 +26,16 @@
 
 - ## Backend
   - GOLANG
+    - gin (for api)
     - gorilla/mux (for router)
     - gorilla/session (for login authentication)
 - ## Database
 
   - POSTGRESQL
+
+## Documentation
+
+- go-swagger (https://github.com/go-swagger/go-swagger)
 
 - ## ORM
 
