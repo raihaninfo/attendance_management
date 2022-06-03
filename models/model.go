@@ -6,7 +6,7 @@ type User struct {
 	UserName    string `json:"username"`
 	Email       string `json:"email"`
 	Mobile      string `json:"mobile"`
-	DateOfBirth string `json:"dateofbirth"`
+	DateOfBirth string `json:"dob"`
 	Designation string `json:"designation"`
 	Password    string `json:"password"`
 	UserType    int    `json:"type"`
@@ -26,5 +26,5 @@ type Student struct {
 type Class struct {
 	Id           int    `json:"id" gorm:"primaryKey;autoIncrement:true;unique"`
 	ClassName    string `json:"class"`
-	ClassTeacher int    `json:"class-teacher"`
+	ClassTeacher int    `json:"class-teacher" ` //gorm:"foreignKey:Id"
 }
