@@ -26,5 +26,13 @@ func Controller(Port string, DB *gorm.DB) {
 		student.DELETE("/student/:id", h.DeleteStudent)
 	}
 
+	user := r.Group("/api")
+	{
+		user.GET("/user", h.AllUser)
+		user.POST("/user", h.AddUser)
+		user.PUT("/user/:id", h.UpdateUser)
+		user.DELETE("/user/:id", h.DeleteUser)
+	}
+
 	r.Run(Port)
 }
