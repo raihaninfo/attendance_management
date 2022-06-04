@@ -10,9 +10,10 @@ import (
 func Controller(Port string, DB *gorm.DB) {
 	h := handlers.New(DB)
 	r := gin.Default()
+	r.GET("/", h.Home)
+
 	class := r.Group("/api")
 	{
-		class.GET("/", h.Home)
 		class.GET("/class", h.AllClass)
 		class.POST("/class", h.AddClass)
 		class.PUT("/class/:id", h.UpdateClass)

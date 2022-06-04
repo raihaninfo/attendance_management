@@ -8,9 +8,9 @@ import (
 )
 
 func (h handler) AllClass(c *gin.Context) {
-	var re []models.Class
-	h.DB.Find(&re)
-	c.IndentedJSON(http.StatusOK, re)
+	var class []models.Class
+	h.DB.Find(&class)
+	c.IndentedJSON(http.StatusOK, class)
 }
 
 func (h handler) AddClass(c *gin.Context) {
@@ -22,16 +22,20 @@ func (h handler) AddClass(c *gin.Context) {
 		})
 	}
 	h.DB.Create(&class)
-	c.JSON(http.StatusOK, &class)
+	c.IndentedJSON(http.StatusOK, &class)
 }
 
 func (h handler) UpdateClass(c *gin.Context) {
 	id := c.Param("id")
 	var class models.Class
-	if err := h.DB.Where("id = ?", id).First(&class).Error; err != nil {
+
+	err := h.DB.Where("id = ?", id).First(&class).Error
+
+	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
 		return
 	}
+
 	c.BindJSON(&class)
 	h.DB.Save(&class)
 	c.JSON(http.StatusOK, &class)
@@ -49,4 +53,7 @@ func (h handler) DeleteClass(c *gin.Context) {
 	}
 
 	h.DB.Delete(&class)
+	c.JSON(http.StatusOK, gin.H{
+		"status": "Deleted Successfully",
+	})
 }
