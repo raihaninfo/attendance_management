@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 	"github.com/raihaninfo/attendance_magagment/handlers"
 
@@ -10,7 +11,10 @@ import (
 func Controller(Port string, DB *gorm.DB) {
 	h := handlers.New(DB)
 	r := gin.Default()
-	r.GET("/", h.Home)
+	r.GET("/api", h.Home)
+
+	r.Use(static.Serve("/asset", static.LocalFile("views/frontend/assets", true)))
+	r.LoadHTMLGlob("views/frontend/*.gohtml")
 
 	class := r.Group("/api")
 	{
@@ -33,6 +37,18 @@ func Controller(Port string, DB *gorm.DB) {
 		user.POST("/user", h.AddUser)
 		user.PUT("/user/:id", h.UpdateUser)
 		user.DELETE("/user/:id", h.DeleteUser)
+	}
+
+	attendance := r.Group("/api")
+	{
+		attendance.GET("/attendance", h.Attendance)
+	}
+
+	// frontend
+	frontend := r.Group("/")
+	{
+		frontend.GET("/", h.FrontHome)
+		frontend.GET("/teacher", h.FrontTeacher)
 	}
 
 	r.Run(Port)

@@ -28,3 +28,9 @@ type Class struct {
 	ClassName    string `json:"class"`
 	ClassTeacher int    `json:"class-teacher" ` //gorm:"foreignKey:Id"
 }
+
+type Attendance struct {
+	Id                int    `json:"id" gorm:"primaryKey;autoIncrement:true;unique"`
+	Name              string `json:"name"` //`json:"name" gorm:"foreignKey:Name"`
+	StudentAttendance int    `json:"attendance"`
+}

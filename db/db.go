@@ -16,7 +16,7 @@ func Init() *gorm.DB {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	db.AutoMigrate(&models.User{}, &models.Class{}, &models.Student{})
+	db.AutoMigrate(&models.User{}, &models.Class{}, &models.Student{}, &models.Attendance{})
 
 	return db
 }
