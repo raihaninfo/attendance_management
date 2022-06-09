@@ -32,9 +32,7 @@
               </div>
             </div>
           </div>
-          {{.Name}}
-          <br>
-          {{.Email}}
+    
           <section class="section">
             <div class="card">
               <div class="card-header">Simple Datatable</div>
@@ -50,25 +48,17 @@
                     </tr>
                   </thead>
                   <tbody>
+                  {{range .}}
                     <tr>
-                      <td>Graiden</td>
-                      <td>vehicula.aliquet@semconsequat.co.uk</td>
-                      <td>076 4820 8838</td>
-                      <td>Offenburg</td>
+                      <td>{{.Name}}</td>
+                      <td>{{.Email}}</td>
+                      <td>{{.Mobile}}</td>
+                      <td></td>
                       <td>
-                        <span class="badge bg-success">Active</span>
+                        <span class="badge bg-success">{{.Status}}</span>
                       </td>
                     </tr>
-    
-                    <tr>
-                      <td>Emmanuel</td>
-                      <td>eget.lacus.Mauris@feugiatSednec.org</td>
-                      <td>(016977) 8208</td>
-                      <td>Saint-Remy-Geest</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
+                    {{end}}
                   </tbody>
                 </table>
               </div>

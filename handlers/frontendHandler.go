@@ -27,10 +27,8 @@ type Abc struct {
 	Status      int
 }
 
-var abc Abc
-
 func (h handler) FrontTeacher(c *gin.Context) {
-	req, err := http.Get("https://jsonplaceholder.typicode.com/users")
+	req, err := http.Get("http://localhost:8082/api/user")
 	if err != nil {
 		log.Println(err)
 	}
@@ -41,10 +39,11 @@ func (h handler) FrontTeacher(c *gin.Context) {
 		log.Println(err)
 	}
 
+	// json.Unmarshal()
+	var abc []Abc
 	json.Unmarshal(body, &abc)
-	fmt.Println(abc)
-	c.HTML(http.StatusOK, "teachers.gohtml", gin.H{
-		"Name":  abc.Name,
-		"Email": "raihanmahmudi35@gmail.com",
-	})
+	for _, i:= range abc{
+		fmt.Println(i.Email)
+	}
+	c.HTML(http.StatusOK, "teachers.gohtml", abc)
 }
