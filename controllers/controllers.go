@@ -49,6 +49,7 @@ func Controller(Port string, DB *gorm.DB) {
 	{
 		frontend.GET("/", h.FrontHome)
 		frontend.GET("/teacher", h.FrontTeacher)
+		frontend.GET("/student", h.FrontStudent)
 	}
 
 	r.Run(Port)
