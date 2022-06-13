@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -39,11 +38,8 @@ func (h handler) FrontTeacher(c *gin.Context) {
 		log.Println(err)
 	}
 
-	// json.Unmarshal()
 	var abc []Abc
 	json.Unmarshal(body, &abc)
-	for _, i:= range abc{
-		fmt.Println(i.Email)
-	}
+
 	c.HTML(http.StatusOK, "teachers.gohtml", abc)
 }
