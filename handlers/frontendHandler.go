@@ -46,6 +46,6 @@ func (h handler) FrontStudent(c *gin.Context) {
 
 	var student []models.FrontStudent
 	json.Unmarshal(body, &student)
-
+	
 	c.HTML(http.StatusOK, "student.gohtml", student)
 }
