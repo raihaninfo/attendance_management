@@ -33,9 +33,23 @@
 
   - POSTGRESQL
 
-## Api Documentation
+## Api inpoint
 
-- go-swagger (https://github.com/go-swagger/go-swagger)
+```
+GET       /api/class                
+POST      /api/class              
+PUT       /api/class/:id            
+DELETE    /api/class/:id           
+GET       /api/student              
+POST      /api/student              
+PUT       /api/student/:id         
+DELETE    /api/student/:id          
+GET       /api/user                 
+POST      /api/user                 
+PUT       /api/user/:id            
+DELETE    /api/user/:id             
+GET       /api/attendance  
+```
 
 - ## ORM
 
